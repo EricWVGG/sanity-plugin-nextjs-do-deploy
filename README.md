@@ -8,7 +8,7 @@ It is intended to be used with self-hosted Sanity installations. It would probab
 
 This does not work with fully static exports; an API route is required because requests to outside APIs are generally not possible from the client.
 
-_note:_ I am probably going to to deprecate this entire project in favor of one that supports multiple hosting platforms.
+_note:_ I may deprecate this entire project in favor of one that supports multiple hosting platforms, but that’s a way off.
 
 ## Instructions
 
@@ -21,7 +21,7 @@ Create a folder in `/src/app/api` called `deploy`, and a file there called `rout
 In `route.ts`, add the following lines:
 
 ```typescript
-import { initializeDeployment, checkDeployment } from "sanity-nextjs-do-deploy/sanity"
+import {initializeDeployment, checkDeployment} from 'sanity-plugin-nextjs-do-deploy'
 
 const digitalOceanToken = process.env.DIGITAL_OCEAN_TOKEN
 const digitalOceanAppId = process.env.DIGITAL_OCEAN_APP_ID
@@ -41,7 +41,7 @@ note: It’s called `WrappedDeployTool` because it includes a loader for your ex
 
 ```typescript
 import {defineConfig} from 'sanity'
-import {WrappedDeployTool} from 'sanity-nextjs-do-deploy/routes'
+import {WrappedDeployTool} from 'sanity-plugin-nextjs-do-deploy'
 
 export default defineConfig({
   ...
@@ -96,7 +96,7 @@ If you already have a custom Tool Menu, you can insert the `DeployTool`.
 
 ```typescript
 import {defineConfig} from 'sanity'
-import {DeployTool} from 'sanity-nextjs-do-deploy'
+import {DeployTool} from 'sanity-plugin-nextjs-do-deploy'
 
 const deployOptions = { /* see list above */ }
 
@@ -124,11 +124,6 @@ A new button will appear in the top center of your Sanity Studio. Explain that t
 
 This is probably compatible with the "pages router" but I haven't used it in a while. If there's any desire, I'll look into it.
 
-If I restart this dev, use plugin-kit
-https://www.sanity.io/docs/studio/developing-plugins#k2ad0148ea85e
-
-todo: WrappedDeployTool.tsx needs to be responsive
-
 Todo: expand to other platforms
 
 - Render deployments https://render.com/docs/webhooks
@@ -140,5 +135,3 @@ Todo: expand to other platforms
 - Engine Yard
 - Heroku
 - Cloud 66
-# sanity-plugin-nextjs-do-deploy
-# sanity-plugin-nextjs-do-deploy
