@@ -41,14 +41,12 @@ note: It’s called `WrappedDeployTool` because it includes a loader for your ex
 
 ```typescript
 import {defineConfig} from 'sanity'
-import {WrappedDeployTool} from 'sanity-plugin-nextjs-do-deploy'
+import {sanityPluginNextjsDoDeploy} from 'sanity-plugin-nextjs-do-deploy'
 
 export default defineConfig({
   ...
-  studio: {
-    components: {
-      toolMenu: WrappedDeployTool(),
-    },
+  plugins: {
+    sanityPluginNextjsDoDeploy({})
   },
 })
 ```
@@ -66,7 +64,7 @@ const deployOptions = {
   // How often will the script check the deployment progress?
   checkProgressInterval: 30000, // 30 seconds
   // Deployment progress message.
-  estimatedDeploymentDurationMessage: "Est. 7 minutes",
+  estimatedDeploymentDurationMessage: 'Est. 7 minutes',
   // Suppress “toast” messages altogether.
   suppressToasts: false,
   // Custom API endpoint.
@@ -77,43 +75,8 @@ const deployOptions = {
   //   "This will redeploy the website with ALL published content. Proceed?"
   requireConfirmation: true,
   // Enter a string for a custom message.
-  requireConfirmation: "Ready to go?",
+  requireConfirmation: 'Ready to go?',
 }
-
-export default defineConfig({
-  ...
-  studio: {
-    components: {
-      toolMenu: WrappedDeployTool(deployOptions),
-    },
-  },
-})
-```
-
-#### Note for custom tool menus
-
-If you already have a custom Tool Menu, you can insert the `DeployTool`.
-
-```typescript
-import {defineConfig} from 'sanity'
-import {DeployTool} from 'sanity-plugin-nextjs-do-deploy'
-
-const deployOptions = { /* see list above */ }
-
-export default defineConfig({
-  ...
-  studio: {
-    components: {
-      toolMenu: (props: any) => (
-        <div style={{ display: "flex", flexDirection: "row" }}>
-          {props.renderDefault(props)}
-          /* stuff you've already inserted */
-          <DeployTool options={deployOptions} />
-        </div>
-      ),
-    },
-  },
-})
 ```
 
 ### Next steps
