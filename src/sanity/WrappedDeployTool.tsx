@@ -1,4 +1,4 @@
-import type {DeployToolOptions} from './types'
+import type {DeployToolOptions} from './'
 import {DeployTool} from './DeployTool'
 import styled from 'styled-components'
 

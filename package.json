@@ -1,6 +1,6 @@
 {
   "name": "sanity-plugin-nextjs-do-deploy",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Launch deployments from Sanity and NextJS",
   "keywords": [
     "sanity",
@@ -27,21 +27,31 @@
   "sideEffects": false,
   "type": "commonjs",
   "exports": {
-    ".": {
-      "source": "./src/index.ts",
-      "import": "./dist/index.mjs",
-      "default": "./dist/index.js"
+    "sanity": {
+      "source": "./src/sanity/index.ts",
+      "import": "./dist/sanity/index.mjs",
+      "default": "./dist/sanity/index.js"
+    },
+    "next": {
+      "source": "./src/next/index.ts",
+      "import": "./dist/next/index.mjs",
+      "default": "./dist/next/index.js"
     },
     "./package.json": "./package.json"
   },
-  "main": "./dist/index.js",
-  "types": "./dist/index.d.ts",
+  "main": "./dist/sanity/index.js",
+  "types": "./dist/sanity/index.d.ts",
   "files": [
     "dist",
     "sanity.json",
     "src",
     "v2-incompatible.js"
   ],
+  "sanityPlugin": {
+    "verifyPackage": {
+      "srcIndex": false
+    }
+  },
   "dependencies": {
     "@sanity/incompatible-plugin": "^1.0.5",
     "@sanity/ui": "^3.1.10",

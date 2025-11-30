@@ -1,13 +1,13 @@
 import {definePlugin} from 'sanity'
 import {WrappedDeployTool} from './WrappedDeployTool'
-import type {DeployToolOptions, PluginOptions} from './types'
+import type {DeployToolOptions, PluginOptions} from './'
 
 export const sanityPluginNextjsDoDeploy = definePlugin<PluginOptions>((config?: PluginOptions) => {
   const configWithDefaults: DeployToolOptions = {
     apiEndpoint: config?.apiEndpoint ?? '/api/deploy',
     debug: config?.debug ?? false,
     successOrErrorDuration: config?.successOrErrorDuration ?? 600000, // 1m,
-    checkProgressInterval: config?.checkProgressInterval ?? 30000, // 30s
+    checkProgressInterval: config?.checkProgressInterval ?? 60 * 1000, // 1m
     suppressToasts: config?.suppressToasts ?? false,
     estimatedDeploymentDurationMessage:
       config?.estimatedDeploymentDurationMessage ?? 'Est. 7 minutes',

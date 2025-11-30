@@ -1,7 +1,7 @@
 import {useEffect, useState, useCallback} from 'react'
 import {VscRocket} from 'react-icons/vsc'
 import {Button, useToast} from '@sanity/ui'
-import type {DeployToolOptions} from './types'
+import type {DeployToolOptions} from './'
 import {toasts} from './toasts'
 import {useInterval} from 'usehooks-ts'
 

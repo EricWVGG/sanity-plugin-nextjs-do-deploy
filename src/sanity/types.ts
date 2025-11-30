@@ -17,3 +17,5 @@ export type PluginOptions = {
   checkProgressInterval?: number
   debug?: boolean
 }
+
+export default {};

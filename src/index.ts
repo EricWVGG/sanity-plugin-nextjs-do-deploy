@@ -1,5 +1,2 @@
-export * from './DeployTool'
-export * from './WrappedDeployTool'
-export * from './types'
-export * from './sanityPluginNextjsDoDeploy'
 export * from './nextjs'
+export * from './sanity'
