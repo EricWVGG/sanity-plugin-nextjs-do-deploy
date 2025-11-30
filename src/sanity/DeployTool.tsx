@@ -41,7 +41,7 @@ export const DeployTool = ({options}: {options: DeployToolOptions}) => {
     setDeploymentId(undefined)
 
     if (!suppressToasts) {
-      const bundle = toasts('INIT', PAUSE_BEFORE_INTERVAL + 500)
+      const bundle = toasts('INIT', checkProgressInterval)
       toast.push(bundle)
     }
 

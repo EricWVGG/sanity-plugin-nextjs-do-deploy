@@ -21,7 +21,7 @@ Create a folder in `/src/app/api` called `deploy`, and a file there called `rout
 In `route.ts`, add the following lines:
 
 ```typescript
-import {initializeDeployment, checkDeployment} from 'sanity-plugin-nextjs-do-deploy'
+import {initializeDeployment, checkDeployment} from 'sanity-plugin-nextjs-do-deploy/next'
 
 const digitalOceanToken = process.env.DIGITAL_OCEAN_TOKEN
 const digitalOceanAppId = process.env.DIGITAL_OCEAN_APP_ID
@@ -41,7 +41,7 @@ note: It’s called `WrappedDeployTool` because it includes a loader for your ex
 
 ```typescript
 import {defineConfig} from 'sanity'
-import {sanityPluginNextjsDoDeploy} from 'sanity-plugin-nextjs-do-deploy'
+import {sanityPluginNextjsDoDeploy} from 'sanity-plugin-nextjs-do-deploy/sanity'
 
 export default defineConfig({
   ...
