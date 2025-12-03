@@ -1,3 +1,4 @@
+import React from 'react'
 import {definePlugin} from 'sanity'
 import {WrappedDeployTool} from './WrappedDeployTool'
 import type {DeployToolOptions, PluginOptions} from './'

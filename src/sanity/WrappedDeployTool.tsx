@@ -1,3 +1,4 @@
+import React from 'react'
 import type {DeployToolOptions} from './'
 import {DeployTool} from './DeployTool'
 import styled from 'styled-components'

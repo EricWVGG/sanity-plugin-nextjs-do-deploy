@@ -1,4 +1,4 @@
-import {useEffect, useState, useCallback} from 'react'
+import React, {useEffect, useState, useCallback} from 'react'
 import {VscRocket} from 'react-icons/vsc'
 import {Button, useToast} from '@sanity/ui'
 import type {DeployToolOptions} from './'
