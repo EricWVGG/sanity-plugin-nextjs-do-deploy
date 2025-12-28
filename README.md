@@ -8,7 +8,7 @@ It is intended to be used with self-hosted Sanity installations. It would probab
 
 This does not work with fully static exports; an API route is required because requests to outside APIs are generally not possible from the client.
 
-_note:_ I may deprecate this entire project in favor of one that supports multiple hosting platforms, but that’s a way off.
+_note:_ I may deprecate this entire project in favor of one that supports multiple hosting platforms, but that’s a ways off.
 
 ## Instructions
 
