@@ -1,6 +1,6 @@
 {
   "name": "sanity-plugin-nextjs-do-deploy",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Launch deployments from Sanity and NextJS",
   "keywords": [
     "sanity",

@@ -45,8 +45,8 @@ export const DeployTool = ({options}: {options: DeployToolOptions}) => {
       toast.push(bundle)
     }
 
-    consoleDebug('deploying')
-    const {status, ...props} = await fetch('/api/deploy', {method: 'POST'})
+    consoleDebug(['deploying', apiEndpoint])
+    const {status, ...props} = await fetch(apiEndpoint, {method: 'POST'})
     consoleDebug(['deployment started', status, props])
 
     if (status !== 200 && !suppressToasts) {
